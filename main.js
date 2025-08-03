@@ -14,7 +14,7 @@ let negativeArrCount = 0;
 let evenSum = 0;
 let oddSum = 0;
 let arrProduct = 1;
-let maxVal = Math.max(...userArr);
+let maxVal = userArr[0];
 
 for (let i = 0; i < userArr.length; i++) {
   if (userArr[i] > 0) {
@@ -47,10 +47,19 @@ for (let i = 0; i < userArr.length; i++) {
   if (userArr[i] > 0) {
     arrProduct *= userArr[i];
   }
+}
+
+for (let i = 0; i < userArr.length; i++) {
+  if (userArr[i] > maxVal) {
+    maxVal = userArr[i];
+  }
+}
+for (let i = 0; i < userArr.length; i++) {
   if (userArr[i] !== maxVal) {
     userArr[i] = 0;
   }
 }
+
 console.log("Сума додатніх елементів масиву: " + sum);
 console.log("Кількість додатніх елементів масиву: " + count);
 console.log("Найменший елемент масиву: " + minValue);
